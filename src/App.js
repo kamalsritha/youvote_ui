@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from "./pages/login/Login";
+import ValidateLogin from "./pages/validateLogin/ValidateLogin";
+import Register from "./pages/register/Register";
+import VerifyEmailPhone from "./pages/verifyEmailPhone/VerifyEmailPhone";
+import Home from "./pages/home/Home";
+import { useAuth } from './AuthContext';
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
 
 function App() {
+  const { isAuthenticated } = useAuth();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/">
+            <Route index element={<Login/>}/>
+            <Route path="validateLogin" element={<ValidateLogin/>}/>
+            <Route path="register" element={<Register/>}/>
+            <Route path="verifyEmailPhone" element={<VerifyEmailPhone/>}/>
+            <Route path="home" element={
+            (isAuthenticated()) ? <Home/> : <Navigate to="/" replace />
+            }/>
+
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
