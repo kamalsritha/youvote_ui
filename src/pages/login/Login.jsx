@@ -12,8 +12,8 @@ import {LoginOutlined} from '@ant-design/icons';
 
 const Login = () => {
   //notification function
-  const errorNotify = (errorMsg) => toast.error(errorMsg);
-  const successNotify = (successMsg) => toast.success(successMsg);
+  const errorNotify = (errorMsg) => toast.error(errorMsg, { autoClose: 3000 });
+  const successNotify = (successMsg) => toast.success(successMsg, { autoClose: 3000 });
 
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ const Login = () => {
         successNotify(response.data.message);
         setTimeout(() => {
           navigate('/validateLogin');
-        }, 6000); // 6 seconds delay
+        }, 3000); // 3 seconds delay
       }
     } catch (error) {
       if (error.response) {
@@ -80,7 +80,7 @@ const Login = () => {
           <h2>Hello,<br />Welcome!</h2>
           <LoginOutlined className='login-form-info-content-icon'/>
           <h4>
-          YouVote: Empowering your voice in democracy with secure, informed, and engaging voting.<br /><br />
+          Empowering your voice in democracy with secure, informed, and engaging voting.<br /><br />
           Enter your email address in order to login into YouVote.<br /><br />
           If you don't have an account go to the signup page.<br />
           </h4>

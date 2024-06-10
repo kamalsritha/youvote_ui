@@ -82,5 +82,9 @@
   .css-hip9hq-MuiPaper-root-MuiAppBar-root{
     background-color: #01204E!important;
   }
-
-
+  
+  @media(max-width: 700px){
+    .applyFiltersButton{
+      font-size: .7rem!important;
+    }
+  }

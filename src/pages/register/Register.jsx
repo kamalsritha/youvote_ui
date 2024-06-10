@@ -14,8 +14,8 @@ const Register = () => {
   const navigate = useNavigate();
 
   // Notification functions
-  const errorNotify = (errorMsg) => toast.error(errorMsg);
-  const successNotify = (successMsg) => toast.success(successMsg);
+  const errorNotify = (errorMsg) => toast.error(errorMsg, { autoClose: 3000 });
+  const successNotify = (successMsg) => toast.success(successMsg, { autoClose: 3000 });
 
   const onFinish = async (values) => {
     try {
@@ -30,7 +30,7 @@ const Register = () => {
         successNotify(response.data.message);
         setTimeout(() => {
           navigate('/verifyEmailPhone');
-        }, 6000); // 6 seconds delay
+        }, 3000); // 3 seconds delay
       }
     } catch (error) {
       if (error.response) {
@@ -96,7 +96,7 @@ const Register = () => {
           <h2>Hello,<br />Welcome!</h2>
           <FormOutlined className='register-form-info-content-icon'/>
           <h4>
-          YouVote: Empowering your voice in democracy with secure, informed, and engaging voting.<br /><br />
+          Empowering your voice in democracy with secure, informed, and engaging voting.<br /><br />
           Enter your first name, last name, email and phone number in order to register into YouVote.<br /><br />
           If you already have an account go to the login page.<br />
           </h4>

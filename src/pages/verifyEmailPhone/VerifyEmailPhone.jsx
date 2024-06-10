@@ -13,8 +13,8 @@ const VerifyEmailPhone = () => {
   const navigate = useNavigate();
 
   // Notification functions
-  const errorNotify = (errorMsg) => toast.error(errorMsg);
-  const successNotify = (successMsg) => toast.success(successMsg);
+  const errorNotify = (errorMsg) => toast.error(errorMsg, { autoClose: 3000 });
+  const successNotify = (successMsg) => toast.success(successMsg, { autoClose: 3000 });
 
   const onFinish = async (values) => {
     try {
@@ -29,7 +29,7 @@ const VerifyEmailPhone = () => {
         // Redirect to the login page
         setTimeout(() => {
           navigate('/');
-        }, 6000); // 6 seconds delay
+        }, 3000); // 3 seconds delay
       }
     } catch (error) {
       if (error.response) {

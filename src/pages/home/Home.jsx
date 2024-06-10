@@ -131,7 +131,7 @@ const Home = () => {
                     type="primary"
                     onClick={handleApplyFilters}
                     block
-                    style={{ marginTop: '30px', background:"#028391", color:"#01204E", fontWeight:"bold", fontSize:".8rem" }}
+                    style={{ marginTop: '30px', background:"#028391", color:"#01204E", fontWeight:"bold", fontSize:"1rem" }}
                     className='applyFiltersButton'
                   >
                     Apply Filters
@@ -175,9 +175,11 @@ const Home = () => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary" className='electionCardCnadidatesButton'>
-                      {getStatus(election.startDate, election.endDate).text === 'Ended' ? 'View Results' : 'View Candidates'}
-                    </Button>
+                    <Link to={getStatus(election.startDate, election.endDate).text === 'Ended' ? `/electionsResult/${election._id}` : `/elections/${election._id}`}>
+                      <Button size="small" color="primary" className='electionCardCnadidatesButton'>
+                        {getStatus(election.startDate, election.endDate).text === 'Ended' ? 'View Results' : 'View Candidates'}
+                      </Button>
+                    </Link>
                   </CardActions>
                 </Card>
               </Grid>
