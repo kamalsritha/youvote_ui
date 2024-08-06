@@ -79,19 +79,19 @@ const VerifyEmailPhone = () => {
           >
             <Input className="large-input" placeholder="Email Verification Code" />
           </Form.Item>
-          <Form.Item
+          {/* <Form.Item
             name="phoneCode"
             rules={[{ required: true, message: 'Please input the Phone Verification Code!' }]}
           >
             <Input className="large-input" placeholder="Phone Verification Code" />
-          </Form.Item>
+          </Form.Item> */}
           <Form.Item>
             <Button type="primary" htmlType="submit" className="verify-form-button large-input">
               Verify
             </Button>
           </Form.Item>
           <div className="all-rights-reserved">
-            © 2024 <span>YouVote</span> Inc. all rights reserved.
+            © 2024 <span>ChainBallot</span> Inc. all rights reserved.
           </div>
         </Form>
       </div>

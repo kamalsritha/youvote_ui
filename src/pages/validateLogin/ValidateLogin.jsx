@@ -97,7 +97,7 @@ const ValidateLogin = () => {
             Didn't receive credentials? <Link to="/">Try again</Link>
           </div>
           <div className="all-rights-reserved">
-            © 2024 <span>YouVote</span> Inc. all rights reserved.
+            © 2024 <span>ChainBallot</span> Inc. all rights reserved.
           </div>
         </Form>
       </div>

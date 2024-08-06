@@ -94,7 +94,7 @@ const Home = () => {
       <Container className="home-content" maxWidth="lg">
         <div className="home-content-welcome">
           <Typography variant="h4" className="welcome-message home-content-welcome-title" gutterBottom>
-            Welcome to YouVote!
+            Welcome ChainBallot!
           </Typography>
           <Typography variant="body1" className="info-message home-content-welcome-des" gutterBottom>
             Empowering your voice in democracy with secure, informed, and engaging voting.
